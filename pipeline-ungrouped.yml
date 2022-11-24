@@ -4,7 +4,7 @@ steps:
     key: required
     steps:
       - command: echo 1
-      - command: sleep 30
+      - command: sleep 15
 
   - label: Upload A
     command: buildkite-agent pipeline upload a.yml
