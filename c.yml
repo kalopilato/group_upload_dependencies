@@ -1,0 +1,4 @@
+steps:
+  - label: C1
+    command: echo C1
+    depends_on: required
