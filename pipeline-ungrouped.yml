@@ -1,3 +1,4 @@
+dag: true
 steps:
   - group: required
     key: required

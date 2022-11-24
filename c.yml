@@ -1,3 +1,4 @@
+dag: true
 steps:
   - label: C1
     command: echo C1
