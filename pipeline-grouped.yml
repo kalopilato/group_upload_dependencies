@@ -15,10 +15,10 @@ steps:
       - label: Upload C
         command: buildkite-agent pipeline upload c.yml
 
-  - group: uploads parallelised
+  - label: Upload A Parallelised
+    command: buildkite-agent pipeline upload a.yml
     parallelism: 2
-    steps:
-      - label: Upload A
-        command: buildkite-agent pipeline upload a.yml
-      - label: Upload B
-        command: buildkite-agent pipeline upload b.yml
+
+  - label: "Parallel"
+    command: "true"
+    parallelism: 3
