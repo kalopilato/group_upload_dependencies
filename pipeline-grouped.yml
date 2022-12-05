@@ -1,12 +1,16 @@
-dag: true
 steps:
-  - group: required
-    key: required
-    steps:
-      - command: echo 1
-      - command: sleep 15
+  - label: "Command Parallelised"
+    command: "true"
+    parallelism: 2
 
-  - group: uploads
+  - group: "Command Parallelised"
+    steps:
+      - label: "Pass 1"
+        command: "true"
+      - label: "Pass 2"
+        command: "true"
+
+  - group: Uploads ABC
     steps:
       - label: Upload A
         command: buildkite-agent pipeline upload a.yml
@@ -18,7 +22,3 @@ steps:
   - label: Upload A Parallelised
     command: buildkite-agent pipeline upload a.yml
     parallelism: 2
-
-  - label: "Parallel"
-    command: "true"
-    parallelism: 3
